@@ -1,0 +1,87 @@
+html {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background: #404040;
+  font-family: 'Vollkorn', serif;
+}
+#game {
+  background: #404040;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: block;
+}
+#dialog {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  display: none;
+}
+.box {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px;
+  background: #b4b4b4;
+}
+#scene {
+  margin-bottom: 10px;
+  display: none;
+}
+.clear::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#icon {
+  float: left;
+  display: none;
+  margin-right: 10px;
+}
+#text {
+  float: left;
+  width: 400px;
+}
+.option {
+  background: #c8c8c8;
+  width: 400px;
+  margin: 10px 0 0 auto;
+}
+.option:hover {
+  background: #96aac8;
+}
+p {
+  cursor: default;
+  margin: 0px;
+}
+p + p {
+  margin-top: 1em;
+}
+#progress-box {
+  position: fixed;
+  width: 300px;
+  height: 10px;
+  border: 1px solid #eeeeee;
+  padding: 2px;
+  /* Center the box, accounting for the padding and border. */
+  left: 50%;
+  top: 50%;
+  margin-left: -153px;
+  margin-top: -8px;
+}
+#progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #eeeeee;
+}
+#end {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
