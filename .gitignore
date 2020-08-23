@@ -1,0 +1,6 @@
+*.o
+desktop/whimsy
+desktop/editor
+desktop/masks
+desktop/svg
+desktop/export
