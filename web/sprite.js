@@ -28,7 +28,7 @@ export class Sprite {
   static loadSheet(data) {
     let path = data.value();
     while (data.next() && data.size()) {
-      if (data.tag() == "web") {
+      if (data.tag() == "web-sheet") {
         path = data.value();
       }
     }

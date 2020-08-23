@@ -9,12 +9,14 @@ export class Style {
     const name = data.value();
     // If this style has no name, it is the default paragraph style.
     let rule = (name.length ? ".text-" + name : "p") + " {";
+    let family = "";
+    let size = "";
     while (data.next() && data.size()) {
-      if (data.tag() == "family") {
-        rule += `font-family:'${data.value()}';`
+      if (data.tag() === "web-family" || (family === "" && data.tag() == "family")) {
+        family = `font-family:'${data.value()}';`
       }
-      else if (data.tag() === "size") {
-        rule += `font-size:${+data.arg(1)}px;`;
+      else if (data.tag() === "web-size" || (size === "" && data.tag() == "size")) {
+        size = `font-size:${+data.arg(1)}px;`;
       }
       else if (data.tag() === "bold") {
         rule += "font-weight:bold;";
@@ -28,6 +30,12 @@ export class Style {
       else if (data.tag() === "color") {
         rule += `color:rgb(${+data.arg(1)}, ${+data.arg(2)}, ${+data.arg(3)});`;
       }
+    }
+    if (family !== "") {
+      rule += family;
+    }
+    if (size !== "") {
+      rule += size;
     }
     // Close the style rule, and add it to the document.
     rule += "}";

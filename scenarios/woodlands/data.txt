@@ -52,7 +52,9 @@ sprite 100
 
 style
 family optima
+web-family Galdeano
 size 16
+web-size 18
 color 20 20 20
 
 
