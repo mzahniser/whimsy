@@ -1,0 +1,136 @@
+init
+# Lines can be added here to set initial variable values, or to go immediately
+# into a dialog when starting up.
+enter 600,400 treehouse
+
+
+style fresh
+color 65 126 0
+
+style sharp
+color 185 53 33
+
+style rich
+color 166 119 0
+
+
+dialog cupboard
+say There's nothing in your cupboard but a jug of water and some stale crackers. You're going to have to go out and forage for food.
+
+dialog recipe book
+if !recipe
+	say You pull out you woodland recipe book and turn to the salad section. One recipe catches your eye. For ingredients, you'll need something {fresh}fresh{fresh}, something {sharp}sharp{sharp}, and something {rich}rich{rich}.
+	set recipe
+else
+	if fresh && sharp && rich
+		say You have all the ingredients. Time to mix them together in the bowl.
+	if fresh && sharp && !rich
+		say You double-check the recipe. You still need to find something {rich}rich{rich}.
+	if fresh && !sharp && rich
+		say You double-check the recipe. You still need to find something {sharp}sharp{sharp}.
+	if fresh && !sharp && !rich
+		say You double-check the recipe. You still need to find something {sharp}sharp{sharp} and something {rich}rich{rich}.
+	if !fresh && sharp && rich
+		say You double-check the recipe. You still need to find something {fresh}fresh{fresh}.
+	if !fresh && sharp && !rich
+		say You double-check the recipe. You still need to find something {fresh}fresh{fresh} and something {rich}rich{rich}.
+	if !fresh && !sharp && rich
+		say You double-check the recipe. You still need to find something {fresh}fresh{fresh} and something {sharp}sharp{sharp}.
+	if !fresh && !sharp && !rich
+		say You check the recipe book again. To make the salad, you'll need to find something {fresh}fresh{fresh}, something {sharp}sharp{sharp}, and something {rich}rich{rich}.
+
+dialog nature book
+say On this shelf, you keep your handy book of woodland flowers and plants. If you need to learn more about a particular plant, you can come back here and look it up.
+if !seeking cranberries
+	say Thumbing through the book at random, you discover one important fact: the {sharp}cranberries{sharp} in the bog ought to be ripe at this time of year.
+	set seeking cranberries
+goto nature book: index
+
+dialog nature book: index
+if found mushrooms
+	option nature book: mushrooms
+if found wildflowers
+	option nature book: wildflowers
+exit (Put the book away.)
+
+dialog nature book: mushrooms
+ask (Read about mushrooms.)
+say The book tells you that puffball mushrooms are edible, but only when they're young; as they age they grow dry and chalky.{br}For recognizing other edible mushrooms, the book mentions that in this area, mushrooms that grow on trees are always safe to eat.
+set know mushrooms
+goto nature book: index
+
+dialog nature book: wildflowers
+ask (Read about wildflowers.)
+say You scan through the descriptions of the wildflowers that grow in the forest. Among other things, you learn that dandelion leaves are edible and very nutritious.
+set know wildflowers
+goto nature book: index
+
+dialog bowl
+if !recipe
+	say You haven't eaten since breakfast. You should probably figure out what to make for lunch. Maybe some salad?
+else
+	if fed
+		say You're not hungry anymore. That salad was very tasty!
+	else
+		if fresh && sharp && rich
+			say You've collected all the ingredients for your salad. Into the bowl they go.
+			say You sit down at the table and take a bite. It's every bit as delicious as you had imagined it would be.
+			set fed
+		else
+			say You still have not collected all the ingredients for your salad.
+
+
+dialog puffballs
+if !know mushrooms
+	say There's a big patch of puffball mushrooms here, poking up through the grass.
+	set found mushrooms
+else
+	say Clouds of dusty grey spores burst out when you touch these puffball mushrooms. None of them are young enough to be edible.
+
+dialog mushrooms
+if !know mushrooms
+	say Some bright orange mushrooms are growing here. They look like they might be tasty, but you know better than to pick mushrooms without first checking to make sure they aren't poisonous.
+	set found mushrooms
+else
+	say The book said that some mushrooms that grow on the ground are poisonous. Best to play it safe and leave these where they are.
+
+dialog fungi
+if !know mushrooms
+	say Some fleshy orange mushrooms are growing on the side of this tree.
+	set found mushrooms
+else
+	if !rich
+		say You recognize these mushrooms from your nature book: they're "chicken of the woods," a weird-looking but edible mushroom. You pick a few of them; they'll make a {rich}rich{rich} and tasty addition to your salad.
+		set rich
+	else
+		say There's still plenty of mushrooms growing here, but you have enough for today.
+
+
+dialog dandelions
+if !know wildflowers
+	say Some dandelions are blooming in one of the sunny patches of the meadow.
+	set found wildflowers
+else
+	if !fresh
+		say You pick a few handfuls of dandelion leaves. They'll be a {fresh}fresh{fresh} and healthy base for your salad.
+		set fresh
+	else
+		say You've already picked enough dandelion leaves for today.
+
+
+dialog cranberries
+if !seeking cranberries
+	say The water laps quietly at the edge of the bog. It's a peaceful place.
+else
+	if !sharp
+		say Sure enough, you discover some ripe cranberries growing just under the surface of the water. They'll be the perfect thing to add a {sharp}sharp{sharp} accent to your salad.
+		set sharp
+	else
+		say You pick a few extra cranberries and eat them on the spot. Delicious!
+
+
+dialog bedroom
+if !fed
+	say This ladder leads to your bedroom, but you're not tired right now.
+else
+	say Now that your stomach is full, you head up the ladder for a well-deserved nap.

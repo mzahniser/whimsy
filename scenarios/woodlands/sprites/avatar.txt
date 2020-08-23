@@ -1,0 +1,5 @@
+sheet avatar.png
+
+sprite
+bounds 0,0 80,120
+baseline 90

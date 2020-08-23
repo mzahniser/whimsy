@@ -1,0 +1,94 @@
+sheet icon.png
+
+
+sprite
+bounds 0,0 40,40
+
+sprite
+bounds 40,0 80,40
+
+sprite
+bounds 80,0 120,40
+
+sprite
+bounds 120,0 160,40
+
+sprite
+bounds 160,0 200,40
+
+sprite
+bounds 200,0 240,40
+
+sprite
+bounds 240,0 280,40
+
+sprite
+bounds 280,0 320,40
+
+sprite
+bounds 320,0 360,40
+
+sprite
+bounds 360,0 400,40
+
+
+sprite
+bounds 400,0 440,40
+
+sprite
+bounds 440,0 480,40
+
+sprite
+bounds 480,0 520,40
+
+sprite
+bounds 520,0 560,40
+
+sprite
+bounds 560,0 600,40
+
+sprite
+bounds 600,0 640,40
+
+sprite
+bounds 640,0 680,40
+
+sprite
+bounds 680,0 720,40
+
+sprite
+bounds 720,0 760,40
+
+sprite
+bounds 760,0 800,40
+
+
+sprite
+bounds 800,0 840,40
+
+sprite
+bounds 840,0 880,40
+
+sprite
+bounds 880,0 920,40
+
+sprite
+bounds 920,0 960,40
+
+sprite
+bounds 960,0 1000,40
+
+sprite
+bounds 1000,0 1040,40
+
+sprite
+bounds 1040,0 1080,40
+
+sprite
+bounds 1080,0 1120,40
+
+sprite
+bounds 1120,0 1160,40
+
+sprite
+bounds 1160,0 1200,40

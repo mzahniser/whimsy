@@ -1,0 +1,25 @@
+sheet grass.png
+
+sprite
+bounds 0,0 200,200
+layer -20
+
+sprite
+bounds 200,0 400,200
+layer -20
+
+sprite
+bounds 400,0 600,200
+layer -20
+
+sprite
+bounds 600,0 800,200
+layer -20
+
+sprite
+bounds 800,0 1000,200
+layer -20
+
+sprite
+bounds 1000,0 1200,200
+layer -20

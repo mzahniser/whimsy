@@ -1,0 +1,17 @@
+sheet shadow.png
+
+sprite
+bounds 0,0 600,400
+layer 100
+
+sprite
+bounds 0,400 600,800
+layer 100
+
+sprite
+bounds 600,0 1200,800
+layer 100
+
+sprite
+bounds 0,800 1200,1200
+layer 100

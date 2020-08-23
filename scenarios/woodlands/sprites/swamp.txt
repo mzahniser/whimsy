@@ -1,0 +1,31 @@
+sheet swamp.png
+
+sprite
+bounds 0,0 400,220
+layer -50
+mask 275,15 225,40 195,25 135,25 15,85 15,100 35,110 35,120 15,130 15,165 95,205 300,205 330,190 330,160 370,140 370,35 330,15
+
+
+sprite
+bounds 400,0 440,70
+baseline 55
+
+sprite
+bounds 440,0 490,70
+baseline 55
+
+sprite
+bounds 400,70 440,150
+baseline 140
+
+sprite
+bounds 440,70 490,150
+baseline 140
+
+sprite
+bounds 400,150 440,220
+baseline 210
+
+sprite
+bounds 440,150 490,220
+baseline 210

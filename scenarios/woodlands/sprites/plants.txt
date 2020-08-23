@@ -1,0 +1,83 @@
+sheet plants.png
+
+sprite
+bounds 0,0 100,60
+layer -1
+
+sprite
+bounds 100,0 210,60
+layer -1
+
+sprite
+bounds 210,0 310,60
+layer -1
+
+sprite
+bounds 310,0 380,60
+layer -1
+
+sprite
+bounds 380,0 460,60
+layer -1
+
+sprite
+bounds 460,0 540,60
+layer -1
+
+sprite
+bounds 540,0 640,60
+layer -1
+
+sprite
+bounds 640,0 720,60
+layer -1
+
+
+sprite
+bounds 0,60 60,125
+baseline 110
+
+sprite
+bounds 60,60 120,125
+baseline 105
+
+sprite
+bounds 120,60 180,125
+baseline 100
+
+sprite
+bounds 180,60 250,125
+baseline 105
+
+sprite
+bounds 250,60 320,125
+baseline 110
+
+sprite
+bounds 320,60 380,125
+baseline 105
+
+sprite
+bounds 380,60 420,125
+baseline 110
+
+sprite
+bounds 420,60 470,125
+baseline 105
+
+
+sprite
+bounds 470,60 610,125
+layer -1
+
+sprite
+bounds 610,60 720,125
+layer -1
+
+sprite
+bounds 720,60 850,125
+layer -1
+
+sprite
+bounds 850,60 990,125
+layer -1

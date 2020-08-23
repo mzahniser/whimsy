@@ -1,0 +1,108 @@
+sheet dirt.png
+
+sprite
+bounds 980,0 1200,200
+layer -10
+
+sprite
+bounds 400,420 640,580
+layer -10
+
+sprite
+bounds 720,0 980,200
+layer -10
+
+sprite
+bounds 120,740 320,920
+layer -10
+
+
+sprite
+bounds 40,200 380,480
+layer -10
+
+sprite
+bounds 900,660 1200,920
+layer -10
+
+sprite
+bounds 1000,200 1200,420
+layer -10
+
+sprite # error - should be facing NE and NW.
+bounds 940,420 1200,660
+layer -10
+
+sprite
+bounds 460,0 720,200
+layer -10
+
+sprite
+bounds 640,420 940,660
+layer -10
+
+
+sprite
+bounds 600,660 900,920
+layer -10
+
+sprite
+bounds 720,200 1000,420
+layer -10
+
+sprite
+bounds 320,740 600,920
+layer -10
+
+sprite
+bounds 380,200 720,420
+layer -10
+
+
+sprite
+bounds 140,0 460,201
+layer -10
+
+
+
+sprite
+bounds 440,580 600,660
+layer -11
+
+sprite
+bounds 440,660 600,740
+layer -11
+
+
+
+sprite
+bounds 0,480 120,540
+layer -5
+
+sprite
+bounds 0,540 100,600
+layer -5
+
+sprite
+bounds 0,600 100,660
+layer -5
+
+sprite
+bounds 0,660 100,720
+layer -5
+
+sprite
+bounds 0,720 100,780
+layer -5
+
+sprite
+bounds 0,780 100,840
+layer -5
+
+sprite
+bounds 0,840 100,880
+layer -5
+
+sprite
+bounds 0,880 100,920
+layer -5

@@ -1,0 +1,27 @@
+interaction talk
+visible 0,0 40
+active 240,180 50 60
+
+interaction look
+visible 240,180 41
+active 120,90 51 61
+
+interaction use
+visible 240,180 42
+active 80,60 52 62
+
+interaction get
+visible 240,180 43
+active 60,45 53 63
+
+interaction enter
+visible 0,0 44
+active 80,60 54 64
+
+interaction ascend
+visible 0,0 45
+active 80,60 55 65
+
+interaction descend
+visible 0,0 46
+active 80,60 56 66

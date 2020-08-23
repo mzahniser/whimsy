@@ -1,0 +1,53 @@
+room treehouse
+background 64 64 64
+8000 848,403
+8024 1013,498
+8022 788,308
+8021 726,333
+8001 902,407
+8020 1041,454
+8028 579,473
+8025 1112,489
+8026 727,501
+8023 654,507
+8030 629,508
+8029 679,529
+8027 709,594
+9003 1039,305
+9001 447,274
+9000 1073,646
+interaction ascend
+  position 877,451
+  offset -2,-74
+  visible 0,0 45
+  active 80,60 55 65
+  dialog bedroom
+interaction descend
+  position 771,431
+  visible 0,0 46
+  active 80,60 56 66
+  enter 730,400 center
+interaction look
+  position 774,332
+  offset 5,-56
+  visible 240,180 41
+  active 120,90 51 61
+  dialog cupboard
+interaction look
+  position 1021,468
+  offset 1,-54
+  visible 240,180 41
+  active 120,90 51 61
+  dialog nature book
+interaction look
+  position 1092,502
+  offset 3,-51
+  visible 240,180 41
+  active 120,90 51 61
+  dialog recipe book
+interaction use
+  position 680,513
+  offset -7,-12
+  visible 240,180 42
+  active 80,60 52 62
+  dialog bowl

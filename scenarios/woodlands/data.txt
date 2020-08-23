@@ -1,0 +1,64 @@
+game Sketch: Woodlands
+
+index 40
+include sprites/icon.txt
+
+index 100
+include sprites/avatar.txt
+
+
+index 1020
+include sprites/exits.txt
+
+index 1100
+include sprites/grass.txt
+
+index 1200
+include sprites/dirt.txt
+
+index 2000
+include sprites/swamp.txt
+
+index 3000
+include sprites/plants.txt
+
+
+index 4000
+include sprites/pine.txt
+
+index 4100
+include sprites/trunks.txt
+
+index 4130
+include sprites/trunks-2.txt
+
+index 4250
+include sprites/rocks-2.txt
+
+
+index 8000
+include sprites/treehouse.txt
+
+index 8020
+include sprites/furniture.txt
+
+
+index 9000
+include sprites/shadow.txt
+
+
+avatar
+sprite 100
+
+style
+family optima
+size 16
+color 20 20 20
+
+
+include dialog.txt
+include rooms/treehouse.txt
+include rooms/center.txt
+include rooms/meadow.txt
+include rooms/moss.txt
+include rooms/swamp.txt
