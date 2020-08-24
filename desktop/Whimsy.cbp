@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Whimsy" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Whimsy-Debug">
+				<Option output="bin/Debug/Whimsy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="../scenarios/woodlands/data.txt" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Whimsy-Release">
+				<Option output="bin/Release/Whimsy" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="../scenarios/woodlands/data.txt" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++1z" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Editor-Debug">
+				<Option output="bin/Debug/Whimsy-Editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="../scenarios/woodlands/rooms/center.txt" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Editor-Release">
+				<Option output="bin/Release/Whimsy-Editor" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="../scenarios/woodlands/rooms/center.txt" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++1z" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++1z" />
+			<Add directory="C:/dev64/include" />
+			<Add directory="C:/sdl-image-64/include" />
+			<Add directory="C:/dev64/include/SDL2" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDL2main" />
+			<Add library="SDL2.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add library="SDL2_image" />
+			<Add directory="C:/dev64/lib" />
+			<Add directory="C:/sdl-image-64/lib" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
+			<Add after="XCOPY C:\sdl-image-64\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
+		</ExtraCommands>
+		<Unit filename="Avatar.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Avatar.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Canvas.cpp">
+			<Option target="Editor-Debug" />
+			<Option target="Editor-Release" />
+		</Unit>
+		<Unit filename="Canvas.h">
+			<Option target="Editor-Debug" />
+			<Option target="Editor-Release" />
+		</Unit>
+		<Unit filename="Color.h" />
+		<Unit filename="Data.cpp" />
+		<Unit filename="Data.h" />
+		<Unit filename="Dialog.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Dialog.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Edge.cpp" />
+		<Unit filename="Edge.h" />
+		<Unit filename="Font.cpp" />
+		<Unit filename="Font.h" />
+		<Unit filename="Interaction.cpp" />
+		<Unit filename="Interaction.h" />
+		<Unit filename="Menu.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Menu.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Palette.cpp">
+			<Option target="Editor-Debug" />
+			<Option target="Editor-Release" />
+		</Unit>
+		<Unit filename="Palette.h">
+			<Option target="Editor-Debug" />
+			<Option target="Editor-Release" />
+		</Unit>
+		<Unit filename="Paths.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Paths.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Point.cpp" />
+		<Unit filename="Point.h" />
+		<Unit filename="Polygon.cpp" />
+		<Unit filename="Polygon.h" />
+		<Unit filename="Rect.cpp" />
+		<Unit filename="Rect.h" />
+		<Unit filename="Ring.cpp" />
+		<Unit filename="Ring.h" />
+		<Unit filename="Room.cpp" />
+		<Unit filename="Room.h" />
+		<Unit filename="Sprite.cpp" />
+		<Unit filename="Sprite.h" />
+		<Unit filename="Text.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Text.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Variables.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="Variables.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="World.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="World.h">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Unit filename="editor.cpp">
+			<Option target="Editor-Debug" />
+			<Option target="Editor-Release" />
+		</Unit>
+		<Unit filename="whimsy.cpp">
+			<Option target="Whimsy-Debug" />
+			<Option target="Whimsy-Release" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
