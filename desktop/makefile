@@ -4,7 +4,7 @@ LIBS = -lpng -lSDL2_image -lSDL2
 
 
 .PHONY : all
-all : whimsy editor masks svg export
+all : whimsy editor masks svg export glyphs
 
 
 whimsy: whimsy.o Avatar.o Data.o Dialog.o Edge.o Font.o Interaction.o Menu.o Paths.o Point.o Polygon.o Rect.o Ring.o Room.o Sprite.o Text.o Variables.o World.o
@@ -40,6 +40,13 @@ export: export.o
 
 export.o: export.cpp
 	$(CCX) -c $(CFLAGS) -o $@ $<
+
+
+glyphs: glyphs.o
+	$(CXX) -o $@ $^ `pkg-config --libs freetype2`
+
+glyphs.o: glyphs.cpp
+	$(CXX) -c $(CFLAGS) -o $@ $< `pkg-config --cflags freetype2`
 
 
 Avatar.o: Avatar.cpp Avatar.h Data.h Point.h Room.h
@@ -102,4 +109,4 @@ World.o: World.cpp Avatar.h Color.h Data.h Dialog.h Font.h Interaction.h Menu.h 
 
 .PHONY: clean
 clean:
-	rm -f whimsy editor masks svg export *.o
+	rm -f whimsy editor masks svg export glyphs *.o
