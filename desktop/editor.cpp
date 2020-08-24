@@ -21,6 +21,7 @@ Room editor for Whimsy.
 #include <SDL2/SDL_image.h>
 
 #include <cmath>
+#include <fstream>
 #include <iostream>
 #include <vector>
 
@@ -67,6 +68,9 @@ namespace {
 	enum ScreenZone {MAIN, PALETTE_LIST, INTERACTION_LIST, PALETTE};
 }
 
+// Check if the given file exists and is readable.
+bool FileExists(const string &path);
+
 // Figure out what zone of the screen the given (x, y) point is in.
 ScreenZone Zone(int x, int y);
 // Update where the mouse is hovering. Returns true if the tile changed.
@@ -92,7 +96,7 @@ int main(int argc, char *argv[])
 	IMG_Init(IMG_INIT_PNG);
 	window = SDL_CreateWindow(
 		"Whimsy Editor", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		1850, 1025, SDL_WINDOW_SHOWN);
+		1200, 640, SDL_WINDOW_SHOWN);
 	screen = SDL_GetWindowSurface(window);
 	if(!window || !screen)
 	{
@@ -100,15 +104,33 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	
+	// Starting with the room file we're editing, assume that there is a
+	// "data.txt" file defining the sprites, etc. either in the same directory
+	// or in one of its parent directories. Find that directory.
+	string roomPath = (argc >= 2 ? argv[1] : "room.txt");
+	// Convert backward slashes to forward slashes, if on windows.
+#ifdef _WIN32
+	for(char &c : roomPath)
+		if(c == '\\')
+			c = '/';
+#endif
+	string directory = roomPath.substr(0, roomPath.rfind('/') + 1);
+	// Only look three directories up.
+	for(int i = 0; i < 3 && !FileExists(directory + "data.txt"); i++)
+		directory += "../";
+	
+	// Set the location of the font images. Assume the "fonts" directory is in
+	// the same place as the "data.txt" file.
+	Font::SetDirectory(directory + "fonts/");
 	// Load the data file.
-	palette.Load("data.txt");
+	palette.Load(directory + "data.txt");
 	if(!Font::IsLoaded())
 	{
 		cerr << "Unable to load the font." << endl;
 		return 1;
 	}
 	// Load the interaction prototypes.
-	for(Data data("interactions.txt"); data; data.Next())
+	for(Data data(directory + "interactions.txt"); data; data.Next())
 	{
 		if(data.Tag() == "interaction")
 		{
@@ -120,7 +142,6 @@ int main(int argc, char *argv[])
 	// Bail out if we didn't load any palettes.
 	bool done = !palette.Sheets();
 	
-	string roomPath = (argc >= 2 ? argv[1] : "room.txt");
 	room.Load(roomPath);
 	UpdateMask();
 	// Display the active icon for all interactions.
@@ -241,6 +262,13 @@ int main(int argc, char *argv[])
 	SDL_Quit();
 	
 	return 0;
+}
+
+
+
+bool FileExists(const string &path)
+{
+	return ifstream(path).good();
 }
 
 

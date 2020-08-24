@@ -11,6 +11,7 @@ Copyright 2020 Michael Zahniser
 #include "Sprite.h"
 
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 

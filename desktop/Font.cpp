@@ -13,6 +13,9 @@ Copyright 2020 Michael Zahniser
 using namespace std;
 
 namespace {
+	// Directory where the font images are stored.
+	string directory = "fonts/";
+	
 	// Object storing a style definition.
 	class Style {
 	public:
@@ -33,6 +36,14 @@ namespace {
 	const int KERN = 2;
 	// Map a character to a glyph index.
 	int Glyph(char c, bool isAfterSpace);
+}
+
+
+
+// Set the directory where font images are stored.
+void Font::SetDirectory(const string &path)
+{
+	directory = path;
 }
 
 
@@ -316,7 +327,7 @@ namespace {
 	// Get the path to the image for a font with this style.
 	string Style::Path() const
 	{
-		string path = "fonts/" + family + '-' + to_string(size);
+		string path = directory + family + '-' + to_string(size);
 		if(!weight.empty())
 			path += '-' + weight;
 		if(!style.empty())

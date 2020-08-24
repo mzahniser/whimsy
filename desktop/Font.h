@@ -20,6 +20,8 @@ using namespace std;
 
 class Font {
 public:
+	// Set the directory where font images are stored.
+	static void SetDirectory(const string &path);
 	// Load a new font style based on the given data block. The Data object will
 	// be advanced to the end of the block.
 	static void Add(Data &data);

@@ -194,8 +194,18 @@ uint32_t TimerFunction(uint32_t interval, void *)
 
 bool Init(char *argv[])
 {
+	string dataPath = argv[1] ? argv[1] : "data.txt";
+	// Convert backward slashes to forward slashes, if on windows.
+#ifdef _WIN32
+	for(char &c : dataPath)
+		if(c == '\\')
+			c = '/';
+#endif
+	string directory = dataPath.substr(0, dataPath.rfind('/') + 1);
+	Font::SetDirectory(directory + "fonts/");
+	
 	// Load the data file, and read the first line to get the game title.
-	Data data("data.txt");
+	Data data(dataPath);
 	string title = World::LoadConfig(data);
 	if(title.empty())
 	{
