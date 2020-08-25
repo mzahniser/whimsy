@@ -52,37 +52,37 @@ glyphs.o: glyphs.cpp
 Avatar.o: Avatar.cpp Avatar.h Data.h Point.h Room.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Canvas.o: Canvas.cpp Canvas.h Color.h Point.h
+Canvas.o: Canvas.cpp Canvas.h Color.h Point.h Polygon.h Rect.h Ring.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
 Data.o: Data.cpp Data.h Point.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Dialog.o: Dialog.cpp Data.h Dialog.h Point.h Variables.h
+Dialog.o: Dialog.cpp Color.h Data.h Dialog.h Point.h Rect.h Sprite.h Text.h Variables.h World.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Edge.o: Edge.cpp Edge.h Ring.h
+Edge.o: Edge.cpp Edge.h Point.h Ring.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Font.o: Font.cpp Font.h Point.h Rect.h
+Font.o: Font.cpp Color.h Data.h Font.h Point.h Rect.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
 Interaction.o: Interaction.cpp Data.h Interaction.h Point.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Menu.o: Menu.cpp Color.h Data.h Font.h Sprite.h
+Menu.o: Menu.cpp Color.h Data.h Font.h Menu.h Sprite.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Palette.o: Palette.cpp Color.h Data.h Palette.h Point.h Rect.h Sprite.h
+Palette.o: Palette.cpp Color.h Data.h Font.h Palette.h Point.h Rect.h Sprite.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Paths.o: Paths.cpp Paths.h Point.h Polygon.h Room.h Sprite.h 
+Paths.o: Paths.cpp Paths.h Point.h Polygon.h Room.h Sprite.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
 Point.o: Point.cpp Point.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Polygon.o: Polygon.cpp Point.h Polygon.h Ring.h
+Polygon.o: Polygon.cpp Edge.h Point.h Polygon.h Ring.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
 Rect.o: Rect.cpp Point.h Rect.h
@@ -91,10 +91,10 @@ Rect.o: Rect.cpp Point.h Rect.h
 Ring.o: Ring.cpp Edge.h Point.h Ring.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Room.o: Room.cpp Data.h Point.h Rect.h Room.h Sprite.h
+Room.o: Room.cpp Color.h Data.h Interaction.h Point.h Polygon.h Rect.h Room.h Sprite.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
-Sprite.o: Sprite.cpp Data.h Point.h Rect.h Sprite.h
+Sprite.o: Sprite.cpp Data.h Point.h Polygon.h Rect.h Sprite.h
 	$(CCX) -c $(CFLAGS) -o $@ $<
 
 Text.o: Text.cpp Font.h Point.h Text.h
