@@ -77,11 +77,11 @@ void Menu::Draw(SDL_Surface *screen, Point hover, bool loaded) const
 
 
 // Handle the given event, returning a string indicating what to do:
-// "ignore" means do nothing (don't even redraw the screen).
+// An empty string means do nothing (don't even redraw the screen).
 // "new" means start a new game.
 // "continue" means close the menu.
 // "quit" means quit the game.
-// Any other string including empty means switch to the menu with that name.
+// Any other string means to switch to the menu with that name.
 const string &Menu::Handle(const SDL_Event &event) const
 {
 	static const string MAIN_MENU = "main";

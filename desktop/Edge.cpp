@@ -72,7 +72,7 @@ Point Edge::Vector() const
 
 
 
-// Get the current "order" value, i.e. the sum of sqared edge lengths
+// Get the current "order" value, i.e. the sum of squared edge lengths
 // of all edges prior to this one.
 int Edge::Order() const
 {

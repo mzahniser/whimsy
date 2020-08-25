@@ -33,7 +33,7 @@ public:
 	// "new" means start a new game.
 	// "continue" means close the menu.
 	// "quit" means quit the game.
-	// Any other string including empty means switch to the menu with that name.
+	// Any other string means to switch to the menu with that name.
 	const string &Handle(const SDL_Event &event) const;
 	
 	

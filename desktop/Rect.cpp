@@ -72,9 +72,13 @@ bool Rect::Contains(Point point) const
 
 bool Rect::Overlaps(const Rect &rect) const
 {
+	// Each rectangle contains some range of X coordinates and some range
+	// of Y coordinates. They overlap if both the X and Y ranges overlap.
 	return max(x, rect.x) < min(x + w, rect.x + rect.w)
 		&& max(y, rect.y) < min(y + h, rect.y + rect.h);
 }
+
+
 
 // Grow or shrink the rectangle in all directions by the given amount.
 void Rect::Grow(int distance)

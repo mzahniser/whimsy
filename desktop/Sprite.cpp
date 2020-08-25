@@ -82,7 +82,6 @@ int Sprite::Add(Data &data)
 			vector<Point> &part = sprite.mask.back();
 			for(size_t i = 1; i < data.Size(); ++i)
 				part.push_back(data[i]);
-			// TODO: Make sure "allow" masks are inside-out.
 		}
 		else
 			cerr << "Sprite: error:" << data.Line() << endl;
